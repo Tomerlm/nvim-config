@@ -47,4 +47,8 @@ use {
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
 }
+
+use 'tpope/vim-surround'
+
 end)
+
