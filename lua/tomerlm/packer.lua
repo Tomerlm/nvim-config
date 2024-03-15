@@ -50,5 +50,7 @@ use {
 
 use 'tpope/vim-surround'
 
+use 'mattkubej/jest.nvim'
+
 end)
 
