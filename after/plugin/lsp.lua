@@ -14,3 +14,26 @@ require('mason-lspconfig').setup({
     lsp_zero.default_setup,
   },
 })
+
+require('lspconfig').pylsp.setup({
+  on_attach = on_attach,
+  settings = {
+    pylsp = {
+      plugins = {
+        flake8 = {
+          enabled = false,
+          maxLineLength = 119,
+        },
+        mypy = {
+          enabled = true,
+        },
+        pycodestyle = {
+          enabled = false,
+        },
+        pyflakes = {
+          enabled = false,
+        },
+      }
+    }
+  }
+})
