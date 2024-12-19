@@ -15,3 +15,10 @@ require("lazy").setup({
     spec = "tomerlm.lazy",
     change_detection = { notify = false },
 })
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.js", "*.jsx", "*.ts", "*.tsx", "*.json", "*.css", "*.html" },
+  callback = function()
+    vim.lsp.buf.format({ async = false })
+  end,
+})
