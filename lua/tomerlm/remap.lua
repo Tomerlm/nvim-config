@@ -11,4 +11,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
+vim.keymap.set("n", "<leader>b", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+
 
