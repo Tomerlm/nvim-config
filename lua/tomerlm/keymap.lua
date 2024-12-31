@@ -19,6 +19,9 @@ local function keymappings(client, bufnr)
   end
 
   whichkey.register(keymap_l, { buffer = bufnr, prefix = "<leader>" })
+  whichkey.register({
+    t = { ":NvimTreeToggle<CR>", "Toggle NvimTree" },
+}, { prefix = "<leader>" })
 end
 
 function M.setup(client, bufnr)

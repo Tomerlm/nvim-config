@@ -63,7 +63,7 @@ return {
                     })
 
                     -- Configure TypeScript Language Server
-                    lspconfig.tsserver.setup({
+                    lspconfig.ts_ls.setup({
                     root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json"),
                     settings = {
                         completions = { completeFunctionCalls = true },
