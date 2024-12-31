@@ -1,5 +1,6 @@
 return {
     "neovim/nvim-lspconfig",
+    "jose-elias-alvarez/null-ls.nvim", -- Connects Prettier with LSP
     dependencies = {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
@@ -22,6 +23,14 @@ return {
             vim.lsp.protocol.make_client_capabilities(),
             cmp_lsp.default_capabilities())
 
+        require("null-ls").setup({
+              sources = {
+                    null_ls.builtins.formatting.prettier.with({
+                    filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact", "json", "css", "html", "markdown" },
+                    extra_args = { "--config-precedence", "prefer-file" }, -- Use .prettierrc if available
+                }),
+            },
+        })
         require("fidget").setup({})
         require("mason").setup()
         require("mason-lspconfig").setup({
